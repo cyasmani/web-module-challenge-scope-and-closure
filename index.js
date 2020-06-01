@@ -28,7 +28,14 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter 1 has a let count within the function scope as opposed to counter 2 which has
+ * it at the global scope. Counter 2 is not being called and does not have not have an enclosed
+ * function like counter1
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter1 uses closure because the function counter is able to access the variable count within
+ * its own parent function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
@@ -44,23 +51,33 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
+
 // counter2 code
 let count = 0;
 
-function counter2() {
+function counter2(count) {
   return count++;
 }
+
+
 
 
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
+function inning(){
+  let points = Math.round(Math.random() * 2);
+  return points;
+
+
+
 
     /*Code Here*/
 
 }
+
+console.log(inning());
 
 /* Task 3: finalScore()
 
@@ -76,11 +93,28 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning, nine) {
+  
+  let game = {
+    "hometeam": 0,
+    "awayteam": 0
+  }
 
-  /*Code Here*/
+  function inning(){
 
+    for(let  i = 0; i < nine; i++){
+
+      game.hometeam += points;
+      game.awayteam += points;
+
+    }
+    
+  }
+    return game;
 }
+console.log(finalScore(inning,9));
+
+
 
 /* Task 4: 
 
