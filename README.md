@@ -42,6 +42,10 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+  Closure is when you can access a variable outside of your scope and the variable
+  cannot access information within your scope.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +67,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+- closure is used when the console.log calls the ${name} value. I can tell it is a closure because the name calue is not in its lexical scope but it still has access to the name parameter. 
+
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change? 
+
+- What stays the same is that Dan "Rolled". What can change is the number that he rolled. 
+
 c. What is the lexical scope of `newRoll`? 
+
+- The lexical scope of 'newRoll' is within the return function();
 
 ### Task 3 - Stretch Goals
 
@@ -82,6 +94,8 @@ console.log("a defined? " + (typeof a !== 'undefined'));
 console.log("b defined? " + (typeof b !== 'undefined'));
 ```
 
+ANSWER: Before watching the video I think that a is going to be undefined and b is going to be 3. The reason is that a is not able to access 3 since it is not within its scope and is the parent element. B is directly equal to 3. 
+
 2. Write a function that would allow you to do this using a closure. (This is another interview question we've seen before - when you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions)).
 
 ```js
@@ -91,6 +105,11 @@ addSix(21); // returns 27
 ```
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
+
+- The difference between Functional and Object programming is that functional uses functions to execute tasks as opposed to Object which uses classes. Some of the pros of functional programming is the fact that variables inside the function cannot be changed due to the scoping within javascript. Another pro is that it typically requires less code because you don't have to create multiple objects. A con with functional programming is that it doesn't do too well when dealing with multiple bits of small data. 
+
+- Object programming is alot more flexible. It allows you to update
+data and information rather easily since there are objects within the class. Object programming is good for small always changing data. Object programming's code is alot easier to read. Since it is easier to update data and information it is also easier to cause bugs in object programming. 
 
 ## Resources
 

@@ -94,25 +94,25 @@ finalScore(inning, 9) might return:
 */ 
 
 function finalScore(inning, nine) {
-  
-  let game = {
+
+  var game = {
     "hometeam": 0,
     "awayteam": 0
-  }
+  };
 
-  function inning(){
+  for(let  i = 0; i < nine; i++){
 
-    for(let  i = 0; i < nine; i++){
-
-      game.hometeam += points;
-      game.awayteam += points;
-
-    }
+    game.awayteam += inning();
+    game.hometeam += inning();
     
   }
-    return game;
+
+ 
+  return game;
+    
 }
 console.log(finalScore(inning,9));
+
 
 
 
@@ -137,8 +137,31 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(inning, number) {
+
+  let game = {
+
+    "hometeam": 0,
+    "awayteam": 0
+
+  };
+
+  for(var i = 1; i <= number; i++){
+
+    game.awayteam += inning();
+    game.hometeam += inning();
+
+    console.log(`${i}st inning: ${game.hometeam} - ${game.awayteam}`)
+
+
+  }
+
+  return console.log(`Final Score: ${game.hometeam} - ${game.awayteam}`)
+ 
+
   /* CODE HERE */
 }
+
+scoreboard(inning, 9);
 
 
